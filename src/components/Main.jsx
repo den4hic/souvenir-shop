@@ -1,12 +1,15 @@
 import React from 'react';
 
 import '../styles/Main.css';
+import ImageSlider from "./ImageSlider";
+import Content from "./Content";
 
 const Main = () => {
     return (
         <main className="main-container">
             <div className="main">
-                123
+                <ImageSlider/>
+                <Content/>
             </div>
         </main>
     );

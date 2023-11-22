@@ -1,0 +1,16 @@
+.content-container {
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    max-width: 1400px;
+}
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
