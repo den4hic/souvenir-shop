@@ -4,12 +4,12 @@ import '../styles/Main.css';
 import ImageSlider from "./ImageSlider";
 import Content from "./Content";
 
-const Main = () => {
+const Main = ({changeToWishList, addToCartList, wishlist}) => {
     return (
         <main className="main-container">
             <div className="main">
                 <ImageSlider/>
-                <Content/>
+                <Content changeToWishList={changeToWishList} addToCartList={addToCartList} wishlist={wishlist}/>
             </div>
         </main>
     );

@@ -27,6 +27,14 @@ nav ul li {
     font-size: 18px;
     text-decoration: none;
     color: white;
+    padding-right: 25px;
+}
+
+li {
+    border-right: 2px dashed white;
+}
+li:last-child {
+    border-right: none;
 }
 .login-btn {
     background-color: #ed5584;
@@ -44,15 +52,15 @@ nav ul li {
 }
 .cart {
     margin-right: 20px;
+    text-decoration: none;
 }
 
 .left-header-bottom {
     display: flex;
     justify-content: flex-start;
 }
+
 .title {
-    display: flex;
-    justify-content: center;
     color: white;
     cursor: pointer;
     font-size: 20px;
@@ -60,4 +68,11 @@ nav ul li {
 
 .shopping-basket, .wish-icon {
     cursor: pointer;
+}
+.link-cart, .link-wish {
+    color: white;
+}
+.title-container {
+    display: flex;
+    justify-content: center;
 }

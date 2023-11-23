@@ -12,9 +12,15 @@ const ContactContent = ({color1, color2}) => {
 
     return (
         <div className="content-container">
+            {/*{color1 === color2 ? (*/}
+                <div className="content-info">
+                    <h1>Зворотній зв'язок</h1>
+                    <b>Нам важливо, щоб наші клієнти мали змогу з нами зв'язатися, тому служба підтримки, як і офіс працюють щодня з 9:00 до 18:00</b>
+                </div>
+            {/*) : null}*/}
             <div className="content">
                 <div className="buttons">
-                    <Button.Group widths='2' size='huge'>
+                    <Button.Group size='huge'>
                         <Link to='/contacts/map'><Button onClick={() => {setIsMap(true); setIsSocial(false);}} color={color1}>Розташування</Button></Link>
                         <Link to='/contacts/social'><Button onClick={() => {setIsMap(false); setIsSocial(true)}} color={color2}>Соціальні мережі</Button></Link>
                     </Button.Group>

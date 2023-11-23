@@ -1,0 +1,103 @@
+{
+  "items" : [
+    {
+      "id": 1,
+      "name": "Штучна рослина",
+      "price": 2500,
+      "description": "Деякий короткий поaaaaaaa aaaaaa вфцу йщцуат йцуа шо йтв 0ац тцушо йл вдуц ",
+      "image": "1_product.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Футболка з прінтом",
+      "price": 12,
+      "description": "ddd",
+      "image": "1_product.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Чашка",
+      "price": 12,
+      "description": "ddd",
+      "image": "1_product.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Штучна рослина",
+      "price": 2500,
+      "description": "Деякий короткий поaaaaaaa aaaaaa вфцу йщцуат йцуа шо йтв 0ац тцушо йл вдуц ",
+      "image": "1_product.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Штучна рослина",
+      "price": 2500,
+      "description": "Деякий короткий поaaaaaaa aaaaaa вфцу йщцуат йцуа шо йтв 0ац тцушо йл вдуц ",
+      "image": "1_product.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Штучна рослина",
+      "price": 2500,
+      "description": "Деякий короткий поaaaaaaa aaaaaa вфцу йщцуат йцуа шо йтв 0ац тцушо йл вдуц ",
+      "image": "1_product.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Штучна рослина",
+      "price": 2500,
+      "description": "Деякий короткий поaaaaaaa aaaaaa вфцу йщцуат йцуа шо йтв 0ац тцушо йл вдуц ",
+      "image": "1_product.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Штучна рослина",
+      "price": 2500,
+      "description": "Деякий короткий поaaaaaaa aaaaaa вфцу йщцуат йцуа шо йтв 0ац тцушо йл вдуц ",
+      "image": "1_product.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Штучна рослина",
+      "price": 2500,
+      "description": "Деякий короткий поaaaaaaa aaaaaa вфцу йщцуат йцуа шо йтв 0ац тцушо йл вдуц ",
+      "image": "1_product.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Штучна рослина",
+      "price": 2500,
+      "description": "Деякий короткий поaaaaaaa aaaaaa вфцу йщцуат йцуа шо йтв 0ац тцушо йл вдуц ",
+      "image": "1_product.jpg"
+    },
+    {
+      "id": 11,
+      "name": "Штучна рослина",
+      "price": 2500,
+      "description": "Деякий короткий поaaaaaaa aaaaaa вфцу йщцуат йцуа шо йтв 0ац тцушо йл вдуц ",
+      "image": "1_product.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Штучна рослина",
+      "price": 2500,
+      "description": "Деякий короткий поaaaaaaa aaaaaa вфцу йщцуат йцуа шо йтв 0ац тцушо йл вдуц ",
+      "image": "1_product.jpg"
+    },
+    {
+      "id": 13,
+      "name": "Штучна рослина",
+      "price": 2500,
+      "description": "Деякий короткий поaaaaaaa aaaaaa вфцу йщцуат йцуа шо йтв 0ац тцушо йл вдуц ",
+      "image": "1_product.jpg"
+    },
+    {
+      "id": 14,
+      "name": "Штучна рослина",
+      "price": 2500,
+      "description": "Деякий короткий поaaaaaaa aaaaaa вфцу йщцуат йцуа шо йтв 0ац тцушо йл вдуц ",
+      "image": "1_product.jpg"
+    }
+  ]
+
+}

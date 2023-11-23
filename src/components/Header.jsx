@@ -31,13 +31,13 @@ const Header = () => {
                 <div className="header-bottom">
                     <div className="left-header-bottom">
                         <div className="cart">
-                            <Icon className="shopping-basket" name="shopping basket" size="big"/>
+                            <Link className="link-cart" to='/cart'><Icon className="shopping-basket" name="shopping basket" size="big"/></Link>
                         </div>
                         <div className="wish">
-                            <Icon className="wish-icon" name="like" size="big"/>
+                            <Link className="link-wish" to="/wish"><Icon className="wish-icon" name="like" size="big"/></Link>
                         </div>
                     </div>
-                    <div>
+                    <div className="title-container">
                         <Link to="/" className="title">Title</Link>
                     </div>
                     <Search/>

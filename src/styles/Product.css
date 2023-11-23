@@ -20,7 +20,6 @@
     border-radius: 10px;
     max-width: 400px;
     flex-direction: column;
-    align-items: center;
     background-color: var(--main-bg-color);
     color: white;
 }
@@ -50,4 +49,14 @@
     display: block;
     max-width: 100%;
     height: auto;
+}
+.text-info {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin-bottom: 10px;
+}
+.item-info {
+    display: flex;
+    flex-direction: column;
 }

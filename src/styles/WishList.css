@@ -1,0 +1,8 @@
+.wishlist-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--main-bg-color);
+}
+
+.wishlist-text {}
