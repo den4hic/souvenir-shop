@@ -7,6 +7,9 @@ import Contacts from "./pages/Contacts";
 import Cart from "./pages/Cart";
 import WishList from "./pages/WishList";
 import {useEffect, useState} from "react";
+
+import Cookies from "js-cookie";
+
 import productsData from "./data/products.json";
 
 function App() {
@@ -15,10 +18,15 @@ function App() {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
+        let storedArray = localStorage.getItem('wishlist');
+        if (storedArray) {
+            let parsedArray = JSON.parse(storedArray);
+            setWishlistItems(parsedArray);
+        }
         if (productsData && productsData.items) {
             setProducts(productsData.items);
         }
-    }, []);
+    }, [products]);
 
     const handleSearch = (searchRequest) => {
         if (productsData && productsData.items) {
@@ -27,11 +35,21 @@ function App() {
     };
 
     const handleChangeToWishList = (item, flag) => {
+        let newArray = [];
         if (flag) {
+            newArray = [...wishlistItems, item];
             setWishlistItems([...wishlistItems, item]);
         } else {
-            setWishlistItems(wishlistItems.filter((product) => product !== item));
+            for (let i = 0; i < wishlistItems.length; i++) {
+                if(wishlistItems[i].id !== item.id) {
+                    newArray.push(wishlistItems[i])
+                }
+            }
+
+            setWishlistItems(newArray);
         }
+        console.log(newArray)
+        localStorage.setItem("wishlist", JSON.stringify(newArray));
     };
 
     const handleAddToCartList = (item) => {
@@ -71,7 +89,7 @@ function App() {
               />
               <Route
                   path="/wish"
-                  element={<WishList wishlistItems={wishlistItems} handleSearch={handleSearch}/>}
+                  element={<WishList changeToWishList={handleChangeToWishList} addToCartList={handleAddToCartList} wishlistItems={wishlistItems} handleSearch={handleSearch}/>}
               />
           </Routes>
       </BrowserRouter>

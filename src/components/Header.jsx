@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import LoginForm from "./LoginForm";
 import Breadcrumbs from "./Breadcrumbs";
 import Search from "./Search";
-import {Icon} from "semantic-ui-react";
+import {Dropdown, Icon, Menu} from "semantic-ui-react";
 
 
 const Header = ({handleSearch}) => {

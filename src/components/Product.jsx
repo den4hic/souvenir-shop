@@ -3,10 +3,13 @@ import '../styles/Product.css';
 import { Button, Icon } from 'semantic-ui-react';
 
 const Product = ({ product, onChangeToWishlist, onAddToCartlist, wishlist }) => {
-    // Check if wishlist exists and is an array before using .some()
-    const isProductInWishlist = Array.isArray(wishlist) && wishlist.some((item) => item.id === product.id);
+    const [isOnWish, setIsOnWish] = useState(false);
 
-    const [isOnWish, setIsOnWish] = useState(isProductInWishlist);
+    useEffect(() => {
+        if(wishlist.some((item) => item.id === product.id)) {
+            setIsOnWish(true)
+        }
+    }, [product.id, wishlist]);
 
     const handleChangeToWishList = () => {
         if (isOnWish) {
@@ -29,13 +32,14 @@ const Product = ({ product, onChangeToWishlist, onAddToCartlist, wishlist }) => 
     return (
         <div className="item-block">
             <div className="item-img">
-                <img className="image" src={`/assets/images/products/${product.image}`} alt="No data" />
+                <div className="image-container"><img className="image" src={`/assets/images/products/${product.image}`} alt="No data" /></div>
                 <div onClick={handleChangeToWishList}>
                     {isOnWish ? (
                         <Icon className="wish-btn" circular inverted color="red" name="like" size="large" />
                     ) : (
                         <Icon className="wish-btn" circular inverted color="teal" name="like" size="large" />
                     )}
+
                 </div>
             </div>
             <div className="item-info">

@@ -1,10 +1,9 @@
-import React from 'react';
 import Header from "../components/Header";
 import Items from "../components/Items";
 
 import '../styles/WishList.css';
 
-const WishList = ({wishlistItems, handleSearch}) => {
+const WishList = ({changeToWishList, addToCartList,handleSearch, wishlistItems}) => {
     return (
         <div>
             <Header handleSearch={handleSearch}/>
@@ -13,7 +12,7 @@ const WishList = ({wishlistItems, handleSearch}) => {
                 {wishlistItems.length === 0 && <h3>Список бажань порожній</h3>}
             </div>
             <div className="wishlist-container">
-                <Items products={wishlistItems}/>
+                <Items changeToWishList={changeToWishList} addToCartList={addToCartList} products={wishlistItems} activePage={1}/>
             </div>
         </div>
     );
