@@ -4,10 +4,10 @@ import Items from "../components/Items";
 
 import '../styles/WishList.css';
 
-const WishList = ({wishlistItems}) => {
+const WishList = ({wishlistItems, handleSearch}) => {
     return (
         <div>
-            <Header/>
+            <Header handleSearch={handleSearch}/>
             <div className="wishlist-text">
                 <h1>Список бажань</h1>
                 {wishlistItems.length === 0 && <h3>Список бажань порожній</h3>}

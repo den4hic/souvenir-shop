@@ -2,10 +2,10 @@ import React from 'react';
 import Header from "../components/Header";
 import ContactContent from "../components/ContactContent";
 
-const Contacts = ({color1, color2}) => {
+const Contacts = ({color1, color2, handleSearch}) => {
     return (
         <div>
-            <Header/>
+            <Header handleSearch={handleSearch}/>
             <ContactContent color1={color1} color2={color2} />
         </div>
     );

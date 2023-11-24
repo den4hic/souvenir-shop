@@ -6,11 +6,25 @@ import Help from "./pages/Help";
 import Contacts from "./pages/Contacts";
 import Cart from "./pages/Cart";
 import WishList from "./pages/WishList";
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import productsData from "./data/products.json";
 
 function App() {
     const [wishlistItems, setWishlistItems] = useState([]);
     const [cartlistItems, setCartlistItems] = useState([]);
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        if (productsData && productsData.items) {
+            setProducts(productsData.items);
+        }
+    }, []);
+
+    const handleSearch = (searchRequest) => {
+        if (productsData && productsData.items) {
+            setProducts(productsData.items.filter((item) => item.name.toUpperCase().startsWith(searchRequest.toUpperCase())));
+        }
+    };
 
     const handleChangeToWishList = (item, flag) => {
         if (flag) {
@@ -18,7 +32,6 @@ function App() {
         } else {
             setWishlistItems(wishlistItems.filter((product) => product !== item));
         }
-        console.log(wishlistItems);
     };
 
     const handleAddToCartList = (item) => {
@@ -30,35 +43,35 @@ function App() {
           <Routes>
               <Route
                   path="/"
-                  element={<Home changeToWishList={handleChangeToWishList} addToCartList={handleAddToCartList} wishlist={wishlistItems}/>}
+                  element={<Home changeToWishList={handleChangeToWishList} addToCartList={handleAddToCartList} wishlist={wishlistItems} handleSearch={handleSearch} products={products}/>}
               />
               <Route
                   path="/about"
-                  element={<About/>}
+                  element={<About handleSearch={handleSearch}/>}
               />
               <Route
                   path="/help"
-                  element={<Help/>}
+                  element={<Help handleSearch={handleSearch}/>}
               />
               <Route
                   path="/contacts"
-                  element={<Contacts color1='blue' color2='blue' />}
+                  element={<Contacts color1='blue' color2='blue' handleSearch={handleSearch}/>}
               />
               <Route
                   path="/contacts/map"
-                  element={<Contacts color1='facebook' color2='teal' />}
+                  element={<Contacts color1='facebook' color2='teal' handleSearch={handleSearch}/>}
               />
               <Route
                   path="/contacts/social"
-                  element={<Contacts color1='teal' color2='facebook' />}
+                  element={<Contacts color1='teal' color2='facebook' handleSearch={handleSearch}/>}
               />
               <Route
                   path="/cart"
-                  element={<Cart cartlistItems={cartlistItems}/>}
+                  element={<Cart cartlistItems={cartlistItems} handleSearch={handleSearch}/>}
               />
               <Route
                   path="/wish"
-                  element={<WishList wishlistItems={wishlistItems}/>}
+                  element={<WishList wishlistItems={wishlistItems} handleSearch={handleSearch}/>}
               />
           </Routes>
       </BrowserRouter>

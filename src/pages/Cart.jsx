@@ -4,10 +4,10 @@ import Items from "../components/Items";
 
 import '../styles/Cart.css';
 
-const Cart = ({cartlistItems}) => {
+const Cart = ({cartlistItems, handleSearch}) => {
     return (
         <div>
-            <Header/>
+            <Header handleSearch={handleSearch}/>
             <div className="cart-container">
                 <Items products={cartlistItems}/>
             </div>

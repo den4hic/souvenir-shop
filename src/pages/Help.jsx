@@ -4,7 +4,7 @@ import {Accordion} from "semantic-ui-react";
 
 import '../styles/Help.css'
 
-const Help = () => {
+const Help = ({handleSearch}) => {
 
     const panels = [
         {
@@ -16,27 +16,95 @@ const Help = () => {
             content: {
                 content: (
                     <div className="helper">
-          Перепрошуємо за незручності. Упевнені, що сталась якась непередбачувана ситуація і менеджер відповість Вам дуже скоро.
-        </div>
+                        <p>Перепрошуємо за незручності. Упевнені, що сталась якась непередбачувана ситуація і менеджер відповість Вам дуже скоро.</p>
+                    </div>
                 ),
             },
         },
         {
-            key: 'care-for-dogs',
+            key: 'arriving-time',
             title: {
-                content: 'How do I care for a dog?',
+                content: 'Як швидко я зможу отримати своє замовлення?',
                 icon: 'question',
             },
             content: {
                 content: (
-                    <div>
-          It is entirely acceptable to feed your dog a pure kibble diet. Or you
-          can mix their diet up with some cooked or raw meat, fish, vegetables
-          and rice.
-        </div>
+                    <div className="helper">
+                        <p>Ми намагаємось відправляти замовлення щонайшвидче. Зазвичай час відправлення плюс доставки займає від 3 до 5 днів.</p>
+                    </div>
                 ),
             },
         },
+        {
+            key: 'return-product',
+            title: {
+                content: 'У яких ситуаціях я можу повернути товар?',
+                icon: 'question',
+            },
+            content: {
+                content: (
+                    <div className="helper">
+                        <p>Товар можна повернути протягом 14 днів з моменту купівлі. Важливо, щоб товар при цьому не втратив товарного вигляду. Не всі категорії товарів підлягають повернення відповідно до чинного законодавства.</p>
+                    </div>
+                ),
+            },
+        },
+        {
+            key: 'return-сost',
+            title: {
+                content: 'Яка вартість доставки при повернення?',
+                icon: 'question',
+            },
+            content: {
+                content: (
+                    <div className="helper">
+                        <p>Ми піклуємось про нашу репутацію, тому за умови неякісного товару, ми конпенсуємо вартість зворотньої доставки.</p>
+                    </div>
+                ),
+            },
+        },
+        {
+            key: 'return-сost',
+            title: {
+                content: 'Яка вартість доставки при повернення?',
+                icon: 'question',
+            },
+            content: {
+                content: (
+                    <div className="helper">
+                        <p>Ми піклуємось про нашу репутацію, тому за умови неякісного товару, ми конпенсуємо вартість зворотньої доставки.</p>
+                    </div>
+                ),
+            },
+        },
+        {
+            key: 'return-сost',
+            title: {
+                content: 'Яка вартість доставки при повернення?',
+                icon: 'question',
+            },
+            content: {
+                content: (
+                    <div className="helper">
+                        <p>Ми піклуємось про нашу репутацію, тому за умови неякісного товару, ми конпенсуємо вартість зворотньої доставки.</p>
+                    </div>
+                ),
+            },
+        },
+        {
+            key: 'return-сost',
+            title: {
+                content: 'Яка вартість доставки при повернення?',
+                icon: 'question',
+            },
+            content: {
+                content: (
+                    <div className="helper">
+                        <p>Ми піклуємось про нашу репутацію, тому за умови неякісного товару, ми конпенсуємо вартість зворотньої доставки.</p>
+                    </div>
+                ),
+            },
+        }
     ]
 
     return (

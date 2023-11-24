@@ -1,10 +1,10 @@
 import React from 'react';
 import Header from "../components/Header";
 
-const About = () => {
+const About = ({handleSearch}) => {
     return (
         <div>
-            <Header/>
+            <Header handleSearch={handleSearch}/>
             123
         </div>
     );

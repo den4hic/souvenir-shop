@@ -5,17 +5,8 @@ import ItemsFilter from "./ItemsFilter";
 import '../styles/Content.css';
 import {Pagination} from "semantic-ui-react";
 
-import productsData from '../data/products.json';
-
-const Content = ({changeToWishList, addToCartList, wishlist}) => {
-    const [products, setProducts] = useState([]);
+const Content = ({changeToWishList, addToCartList, wishlist, products}) => {
     const [activePage, setActivePage] = useState(1);
-
-    useEffect(() => {
-        if (productsData && productsData.items) {
-            setProducts(productsData.items);
-        }
-    }, []);
 
     const handlePaginationChange = (e, { activePage }) => setActivePage(activePage);
 

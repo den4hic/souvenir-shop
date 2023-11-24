@@ -7,7 +7,7 @@ import Search from "./Search";
 import {Icon} from "semantic-ui-react";
 
 
-const Header = () => {
+const Header = ({handleSearch}) => {
     const [isShow, setIsShow] = useState(false);
 
     const loginClose = () => {
@@ -38,9 +38,9 @@ const Header = () => {
                         </div>
                     </div>
                     <div className="title-container">
-                        <Link to="/" className="title">Title</Link>
+                        <Link to="/" className="title">Souvenir</Link>
                     </div>
-                    <Search/>
+                    <Search handleSearch={handleSearch}/>
                 </div>
                 <Breadcrumbs/>
             </header>

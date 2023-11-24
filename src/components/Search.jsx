@@ -5,37 +5,34 @@ import {Icon, Input} from 'semantic-ui-react'
 import '../styles/Search.css';
 import loginForm from "./LoginForm";
 
-const Search = () => {
+const Search = ({handleSearch}) => {
     const [searchQuery, setSearchQuery] = useState('');
-    const [searchResults, setSearchResults] = useState([]);
     const [isSearchField, setIsSearchField] = useState(false)
 
-    const performSearch = (e) => {
+    const performSearch = (e, data) => {
         e.stopPropagation();
-        console.log(`Ваш пошук: ${searchQuery}`);
+        if(data !== undefined) {
+            handleSearch(data.value);
+        } else {
+            handleSearch("");
+        }
     };
 
-    document.addEventListener('click', () => {
-        setIsSearchField(false);
-    })
+    // document.addEventListener('click', () => {
+    //     setIsSearchField(false);
+    // })
     return (
         <div className="search-container">
             <div className="search-input">
                 <div className="search-field" onClick={performSearch}>
-
                     <Input
-                        icon={<Icon name='search' inverted circular link />}
+                        onChange={performSearch}
+                        icon={<Icon onClick={()=>{
+                            console.log(1)}} name='search' inverted circular link />}
                         placeholder='Search...'
                     />
-
                 </div>
             </div>
-            {/* Відображення результатів пошуку */}
-            <ul>
-                {searchResults.map((result, index) => (
-                    <li key={index}>{result}</li>
-                ))}
-            </ul>
         </div>
     );
 };
