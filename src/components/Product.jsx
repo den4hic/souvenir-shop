@@ -39,8 +39,8 @@ const Product = ({ product, onChangeToWishlist, onAddToCartlist, wishlist }) => 
                     ) : (
                         <Icon className="wish-btn" circular inverted color="teal" name="like" size="large" />
                     )}
-
                 </div>
+                {product.isPopular && <div className="badge"><b>Популярно</b></div>}
             </div>
             <div className="item-info">
                 <div className="text-info">
@@ -52,6 +52,7 @@ const Product = ({ product, onChangeToWishlist, onAddToCartlist, wishlist }) => 
                     <Button onClick={handleAddToCartlist} color="yellow" circular icon="shop" size="big" />
                 </div>
             </div>
+
         </div>
     );
 };

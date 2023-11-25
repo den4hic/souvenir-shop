@@ -1,13 +1,17 @@
-import React, { useState } from 'react';
-import { FiSearch } from 'react-icons/fi'; // Імпорт іконки з бібліотеки react-icons
+import React, {useEffect, useState} from 'react';
 import {Icon, Input} from 'semantic-ui-react'
 
 import '../styles/Search.css';
-import loginForm from "./LoginForm";
 
 const Search = ({handleSearch}) => {
     const [searchQuery, setSearchQuery] = useState('');
     const [isSearchField, setIsSearchField] = useState(false)
+
+    useEffect(() => {
+        if(handleSearch) {
+            handleSearch("");
+        }
+    }, []);
 
     const performSearch = (e, data) => {
         e.stopPropagation();
@@ -18,13 +22,10 @@ const Search = ({handleSearch}) => {
         }
     };
 
-    // document.addEventListener('click', () => {
-    //     setIsSearchField(false);
-    // })
     return (
         <div className="search-container">
             <div className="search-input">
-                <div className="search-field" onClick={performSearch}>
+                <div className="search-field">
                     <Input
                         onChange={performSearch}
                         icon={<Icon onClick={()=>{

@@ -8,14 +8,13 @@ import Cart from "./pages/Cart";
 import WishList from "./pages/WishList";
 import {useEffect, useState} from "react";
 
-import Cookies from "js-cookie";
-
 import productsData from "./data/products.json";
 
 function App() {
     const [wishlistItems, setWishlistItems] = useState([]);
     const [cartlistItems, setCartlistItems] = useState([]);
     const [products, setProducts] = useState([]);
+
 
     useEffect(() => {
         let storedArray = localStorage.getItem('wishlist');
@@ -26,7 +25,49 @@ function App() {
         if (productsData && productsData.items) {
             setProducts(productsData.items);
         }
-    }, [products]);
+    }, []);
+
+    const handleChangeCategory = (category) => {
+        if (productsData && productsData.items) {
+            if (category === "all") {
+                setProducts(productsData.items);
+            } else {
+                setProducts(productsData.items.filter((item) => item.category.some((cat) => cat === category)));
+            }
+        }
+    };
+
+    const handlePopular = (checked) => {
+        if (productsData && productsData.items) {
+            if (checked) {
+                setProducts(products.filter((item) => item.isPopular));
+            } else {
+                setProducts(productsData.items);
+            }
+        }
+    };
+
+    const handleSort = (sortOption) => {
+        if(productsData && productsData.items) {
+            let sortedProducts = [...products];
+
+            switch (sortOption) {
+                case "price_asc":
+                    sortedProducts.sort((item1, item2) => item1.price - item2.price);
+                    break;
+                case "price_desc":
+                    sortedProducts.sort((item1, item2) => item2.price - item1.price);
+                    break;
+                case "lang":
+                    sortedProducts.sort((item1, item2) => item1.name.localeCompare(item2.name));
+                    break;
+                default:
+            }
+
+            setProducts(sortedProducts);
+        }
+    };
+
 
     const handleSearch = (searchRequest) => {
         if (productsData && productsData.items) {
@@ -48,7 +89,6 @@ function App() {
 
             setWishlistItems(newArray);
         }
-        console.log(newArray)
         localStorage.setItem("wishlist", JSON.stringify(newArray));
     };
 
@@ -61,7 +101,7 @@ function App() {
           <Routes>
               <Route
                   path="/"
-                  element={<Home changeToWishList={handleChangeToWishList} addToCartList={handleAddToCartList} wishlist={wishlistItems} handleSearch={handleSearch} products={products}/>}
+                  element={<Home changeToWishList={handleChangeToWishList} addToCartList={handleAddToCartList} wishlist={wishlistItems} handleSearch={handleSearch} products={products} handleChangeCategory={handleChangeCategory} handleSort={handleSort} handlePopular={handlePopular}/>}
               />
               <Route
                   path="/about"

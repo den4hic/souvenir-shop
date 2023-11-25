@@ -3,100 +3,128 @@
     {
       "id": 1,
       "name": "Штучна рослина",
-      "price": 2500,
-      "description": "Деякий короткий поaaaaaaa aaaaaa вфцу йщцуат йцуа шо йтв 0ац тцушо йл вдуц ",
-      "image": "1_product.jpg"
+      "price": 350,
+      "description": "Гарне декорне рішення для вашого дому за яким не потрібно буде доглядати",
+      "category": ["decoration", "plant"],
+      "image": "1_product.jpg",
+      "isPopular": false
     },
     {
       "id": 2,
-      "name": "Футболка з прінтом",
-      "price": 12,
-      "description": "ddd",
-      "image": "2_product.jpg"
+      "name": "Іграшкові ляльки",
+      "price": 500,
+      "description": "Ляльки у вбранні стануть гарним рішенням для вашого столу.",
+      "category": ["decoration"],
+      "image": "2_product.jpg",
+      "isPopular": true
     },
     {
       "id": 3,
-      "name": "Чашка",
-      "price": 12,
-      "description": "ddd",
-      "image": "3_product.jpg"
+      "name": "Футболка 'New Mexico'",
+      "price": 600,
+      "description": "Гарна футболка для любителів Латинської Америки",
+      "category": ["clothes"],
+      "image": "3_product.jpg",
+      "isPopular": false
     },
     {
       "id": 4,
-      "name": "Штучна рослина",
-      "price": 2500,
-      "description": "Деякий короткий поaaaaaaa aaaaaa вфцу йщцуат йцуа шо йтв 0ац тцушо йл вдуц ",
-      "image": "4_product.jpg"
+      "name": "Футболка 'TRONDHEIM'",
+      "price": 550,
+      "description": "Футболка зі скандинавським корінням",
+      "category": ["clothes"],
+      "image": "4_product.jpg",
+      "isPopular": false
     },
     {
       "id": 5,
-      "name": "Штучна рослина",
-      "price": 2500,
-      "description": "Деякий короткий поaaaaaaa aaaaaa вфцу йщцуат йцуа шо йтв 0ац тцушо йл вдуц ",
-      "image": "5_product.jpg"
+      "name": "Футболка 'Next trip to Europe'",
+      "price": 550,
+      "description": "Спеціально розроблена для подорожей Європою",
+      "category": ["clothes"],
+      "image": "5_product.jpg",
+      "isPopular": false
     },
     {
       "id": 6,
-      "name": "Штучна рослина",
-      "price": 2500,
-      "description": "Деякий короткий поaaaaaaa aaaaaa вфцу йщцуат йцуа шо йтв 0ац тцушо йл вдуц ",
-      "image": "6_product.jpg"
+      "name": "Чашка з орнаментом",
+      "price": 320,
+      "description": "Чашка з національним орнаментом ідеально підійде для вечірніх посиденьок",
+      "category": ["dishes"],
+      "image": "6_product.jpg",
+      "isPopular": false
     },
     {
       "id": 7,
-      "name": "Штучна рослина",
-      "price": 2500,
-      "description": "Деякий короткий поaaaaaaa aaaaaa вфцу йщцуат йцуа шо йтв 0ац тцушо йл вдуц ",
-      "image": "7_product.jpg"
+      "name": "Футболка 'Barcelona'",
+      "price": 700,
+      "description": "Футболка для подорожі сонячною Іспанією",
+      "category": ["clothes"],
+      "image": "7_product.jpg",
+      "isPopular": false
     },
     {
       "id": 8,
-      "name": "Штучна рослина",
-      "price": 2500,
-      "description": "Деякий короткий поaaaaaaa aaaaaa вфцу йщцуат йцуа шо йтв 0ац тцушо йл вдуц ",
-      "image": "8_product.jpg"
+      "name": "Дошка для нарізання",
+      "price": 120,
+      "description": "Дошка для нарізання з гарним орнаментом",
+      "category": ["dishes"],
+      "image": "8_product.jpg",
+      "isPopular": false
     },
     {
       "id": 9,
-      "name": "Штучна рослина",
-      "price": 2500,
-      "description": "Деякий короткий поaaaaaaa aaaaaa вфцу йщцуат йцуа шо йтв 0ац тцушо йл вдуц ",
-      "image": "9_product.jpg"
+      "name": "Ляльки 'Молодики'",
+      "price": 260,
+      "description": "Гарний подарунок на весілля для молодих людей",
+      "category": ["decoration"],
+      "image": "9_product.jpg",
+      "isPopular": false
     },
     {
       "id": 10,
-      "name": "Штучна рослина",
-      "price": 2500,
-      "description": "Деякий короткий поaaaaaaa aaaaaa вфцу йщцуат йцуа шо йтв 0ац тцушо йл вдуц ",
-      "image": "10_product.jpg"
+      "name": "Набір тарілок",
+      "price": 1000,
+      "description": "Красивий набір з десяти тарілок",
+      "category": ["decoration", "dishes"],
+      "image": "10_product.jpg",
+      "isPopular": true
     },
     {
       "id": 11,
-      "name": "Штучна рослина",
-      "price": 2500,
-      "description": "Деякий короткий поaaaaaaa aaaaaa вфцу йщцуат йцуа шо йтв 0ац тцушо йл вдуц ",
-      "image": "11_product.jpg"
+      "name": "Колба бажань",
+      "price": 340,
+      "description": "Баночка, куди можна закинути свої найзаповітніші мрії",
+      "category": ["decoration"],
+      "image": "11_product.jpg",
+      "isPopular": false
     },
     {
       "id": 12,
-      "name": "Штучна рослина",
-      "price": 2500,
-      "description": "Деякий короткий поaaaaaaa aaaaaa вфцу йщцуат йцуа шо йтв 0ац тцушо йл вдуц ",
-      "image": "12_product.jpg"
+      "name": "Лялька поштаря",
+      "price": 400,
+      "description": "Лялька поштаря, одягнутого в традиційне вбрання",
+      "category": ["decoration"],
+      "image": "12_product.jpg",
+      "isPopular": true
     },
     {
       "id": 13,
-      "name": "Штучна рослина",
-      "price": 2500,
-      "description": "Деякий короткий поaaaaaaa aaaaaa вфцу йщцуат йцуа шо йтв 0ац тцушо йл вдуц ",
-      "image": "13_product.jpg"
+      "name": "Ароматична колба",
+      "price": 410,
+      "description": "Банка, яка містить в собі різнобарв'я запахів",
+      "category": ["decoration"],
+      "image": "13_product.jpg",
+      "isPopular": false
     },
     {
       "id": 14,
-      "name": "Штучна рослина",
-      "price": 2500,
-      "description": "Деякий короткий поaaaaaaa aaaaaa вфцу йщцуат йцуа шо йтв 0ац тцушо йл вдуц ",
-      "image": "14_product.jpg"
+      "name": "Тарілка з птахом",
+      "price": 380,
+      "description": "Тарілка з прекрасним орнаментом жар-птиці",
+      "category": ["decoration", "dishes"],
+      "image": "14_product.jpg",
+      "isPopular": true
     }
   ]
 
