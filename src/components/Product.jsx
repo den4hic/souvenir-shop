@@ -2,14 +2,18 @@ import React, { useEffect, useState } from 'react';
 import '../styles/Product.css';
 import { Button, Icon } from 'semantic-ui-react';
 
-const Product = ({ product, onChangeToWishlist, onAddToCartlist, wishlist }) => {
+const Product = ({ product, onChangeToWishlist, onChangeToCartlist, wishlist, cartlist }) => {
     const [isOnWish, setIsOnWish] = useState(false);
+    const [isOnCart, setIsOnCart] = useState(false);
 
     useEffect(() => {
-        if(wishlist.some((item) => item.id === product.id)) {
+        if(wishlist && wishlist.some((item) => item.id === product.id)) {
             setIsOnWish(true)
         }
-    }, [product.id, wishlist]);
+        if(cartlist && cartlist.some((item) => item.id === product.id)) {
+            setIsOnCart(true)
+        }
+    }, [cartlist, product.id, wishlist]);
 
     const handleChangeToWishList = () => {
         if (isOnWish) {
@@ -21,8 +25,14 @@ const Product = ({ product, onChangeToWishlist, onAddToCartlist, wishlist }) => 
         }
     };
 
-    const handleAddToCartlist = () => {
-        onAddToCartlist(product);
+    const handleChangeCartlist = () => {
+        if (isOnCart) {
+            setIsOnCart(false);
+            onChangeToCartlist(product, false);
+        } else {
+            setIsOnCart(true);
+            onChangeToCartlist(product, true);
+        }
     };
 
     if (!product) {
@@ -49,7 +59,12 @@ const Product = ({ product, onChangeToWishlist, onAddToCartlist, wishlist }) => 
                 </div>
                 <div className="buy-container">
                     <b className="price">{product.price} грн.</b>
-                    <Button onClick={handleAddToCartlist} color="yellow" circular icon="shop" size="big" />
+                    {isOnCart ? (
+                        <Button onClick={handleChangeCartlist} color="red" circular icon="shop" size="big" />
+                    ) : (
+                        <Button onClick={handleChangeCartlist} color="yellow" circular icon="shop" size="big" />
+                    )}
+
                 </div>
             </div>
 

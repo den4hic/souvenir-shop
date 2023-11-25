@@ -3,7 +3,7 @@ import Items from "../components/Items";
 
 import '../styles/WishList.css';
 
-const WishList = ({changeToWishList, addToCartList,handleSearch, wishlistItems}) => {
+const WishList = ({changeToWishList, handleChangeCart,handleSearch, wishlistItems}) => {
     return (
         <div>
             <Header handleSearch={handleSearch}/>
@@ -12,7 +12,7 @@ const WishList = ({changeToWishList, addToCartList,handleSearch, wishlistItems})
                 {wishlistItems.length === 0 && <h3>Список бажань порожній</h3>}
             </div>
             <div className="wishlist-container">
-                <Items changeToWishList={changeToWishList} addToCartList={addToCartList} products={wishlistItems} activePage={1}/>
+                <Items changeToWishList={changeToWishList} handleChangeCart={handleChangeCart} products={wishlistItems} activePage={1}/>
             </div>
         </div>
     );

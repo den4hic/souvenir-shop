@@ -7,7 +7,7 @@
       "description": "Гарне декорне рішення для вашого дому за яким не потрібно буде доглядати",
       "category": ["decoration", "plant"],
       "image": "1_product.jpg",
-      "isPopular": false
+      "isPopular": true
     },
     {
       "id": 2,
@@ -61,7 +61,7 @@
       "description": "Футболка для подорожі сонячною Іспанією",
       "category": ["clothes"],
       "image": "7_product.jpg",
-      "isPopular": false
+      "isPopular": true
     },
     {
       "id": 8,

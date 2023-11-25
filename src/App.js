@@ -15,12 +15,16 @@ function App() {
     const [cartlistItems, setCartlistItems] = useState([]);
     const [products, setProducts] = useState([]);
 
-
     useEffect(() => {
-        let storedArray = localStorage.getItem('wishlist');
-        if (storedArray) {
-            let parsedArray = JSON.parse(storedArray);
-            setWishlistItems(parsedArray);
+        let storedArrayWish = localStorage.getItem('wishlist');
+        if (storedArrayWish) {
+            let parsedArrayWish = JSON.parse(storedArrayWish);
+            setWishlistItems(parsedArrayWish);
+        }
+        let storedArrayCart = localStorage.getItem('cartlist');
+        if (storedArrayCart) {
+            let parsedArrayCart = JSON.parse(storedArrayCart);
+            setCartlistItems(parsedArrayCart);
         }
         if (productsData && productsData.items) {
             setProducts(productsData.items);
@@ -68,12 +72,12 @@ function App() {
         }
     };
 
-
     const handleSearch = (searchRequest) => {
         if (productsData && productsData.items) {
             setProducts(productsData.items.filter((item) => item.name.toUpperCase().startsWith(searchRequest.toUpperCase())));
         }
     };
+
 
     const handleChangeToWishList = (item, flag) => {
         let newArray = [];
@@ -92,8 +96,22 @@ function App() {
         localStorage.setItem("wishlist", JSON.stringify(newArray));
     };
 
-    const handleAddToCartList = (item) => {
-        setCartlistItems([...cartlistItems, item]);
+    const handleChangeCart = (cart, flag) => {
+        let newArray = [];
+        if (flag) {
+            newArray = [...cartlistItems, cart];
+            setCartlistItems([...cartlistItems, cart]);
+        } else {
+            for (let i = 0; i < cartlistItems.length; i++) {
+                if(cartlistItems[i].id !== cart.id) {
+                    newArray.push(cartlistItems[i])
+                }
+            }
+
+            setCartlistItems(newArray);
+        }
+
+        localStorage.setItem("cartlist", JSON.stringify(newArray));
     };
 
   return (
@@ -101,7 +119,7 @@ function App() {
           <Routes>
               <Route
                   path="/"
-                  element={<Home changeToWishList={handleChangeToWishList} addToCartList={handleAddToCartList} wishlist={wishlistItems} handleSearch={handleSearch} products={products} handleChangeCategory={handleChangeCategory} handleSort={handleSort} handlePopular={handlePopular}/>}
+                  element={<Home changeToWishList={handleChangeToWishList} handleChangeCart={handleChangeCart} cartlist={cartlistItems} wishlist={wishlistItems} handleSearch={handleSearch} products={products} handleChangeCategory={handleChangeCategory} handleSort={handleSort} handlePopular={handlePopular}/>}
               />
               <Route
                   path="/about"
@@ -125,11 +143,11 @@ function App() {
               />
               <Route
                   path="/cart"
-                  element={<Cart cartlistItems={cartlistItems} handleSearch={handleSearch}/>}
+                  element={<Cart cartlistItems={cartlistItems} handleSearch={handleSearch} handleChangeCart={handleChangeCart}/>}
               />
               <Route
                   path="/wish"
-                  element={<WishList changeToWishList={handleChangeToWishList} addToCartList={handleAddToCartList} wishlistItems={wishlistItems} handleSearch={handleSearch}/>}
+                  element={<WishList changeToWishList={handleChangeToWishList} handleChangeCart={handleChangeCart} wishlistItems={wishlistItems} handleSearch={handleSearch}/>}
               />
           </Routes>
       </BrowserRouter>

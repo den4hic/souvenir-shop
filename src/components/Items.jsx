@@ -3,23 +3,29 @@ import Product from "./Product";
 
 import '../styles/Product.css';
 
-const Items = ({changeToWishList, addToCartList, products, activePage}) => {
+const Items = ({changeToWishList, handleChangeCart, products, activePage}) => {
     const [pageProducts, setPageProducts] = useState([]);
     const [wishlist, setWishlist] = useState([])
+    const [cartlist, setCartList] = useState([])
 
     useEffect(() => {
-        let storedArray = localStorage.getItem('wishlist');
-        if (storedArray) {
-            let parsedArray = JSON.parse(storedArray);
+        let storedArrayWish = localStorage.getItem('wishlist');
+        if (storedArrayWish) {
+            let parsedArray = JSON.parse(storedArrayWish);
             setWishlist(parsedArray);
+        }
+        let storedArrayCart = localStorage.getItem('cartlist');
+        if (storedArrayCart) {
+            let parsedArray = JSON.parse(storedArrayCart);
+            setCartList(parsedArray);
         }
     }, [])
     const handleChangeToWishList = (product, flag) => {
         changeToWishList(product, flag);
     };
 
-    const handleAddToCartlist = (product) => {
-      addToCartList(product);
+    const changeToCartlist = (product, flag) => {
+        handleChangeCart(product, flag);
     };
 
     useMemo(() => {
@@ -30,7 +36,7 @@ const Items = ({changeToWishList, addToCartList, products, activePage}) => {
         <div className="item-container">
             {pageProducts
                 .map((product) => (
-                <Product key={product.id} product={product} onChangeToWishlist={handleChangeToWishList} onAddToCartlist={handleAddToCartlist} wishlist={wishlist}/>
+                <Product key={product.id} product={product} onChangeToWishlist={handleChangeToWishList} onChangeToCartlist={changeToCartlist} wishlist={wishlist} cartlist={cartlist}/>
             ))}
         </div>
     );

@@ -1,15 +1,35 @@
-import React from 'react';
-import Header from "../components/Header";
-import Items from "../components/Items";
+import React, { useState } from 'react';
 
 import '../styles/Cart.css';
+import Header from "../components/Header";
+import CartProduct from "../components/CartProduct";
 
-const Cart = ({cartlistItems, handleSearch}) => {
+const Cart = ({ cartlistItems: products, handleChangeCart }) => {
+    const [cartProducts, setCartProducts] = useState(products);
+    const [selectedProduct, setSelectedProduct] = useState(null);
+    const [quantity, setQuantity] = useState(1);
+
+
+    const handleBuy = () => {
+        console.log('Куплено!');
+    };
+
     return (
+
         <div>
-            <Header handleSearch={handleSearch}/>
+            <Header/>
             <div className="cart-container">
-                <Items products={cartlistItems}/>
+                <h2>Кошик</h2>
+                {cartProducts.length === 0 && (<h3>Кошик пустий</h3>)}
+                <div className="products-container">
+                    {cartProducts.map((product, index) => (
+                        <CartProduct product={product} index={index} handleChangeCart={handleChangeCart}/>
+                    ))}
+                </div>
+
+                <button className="buy-button" onClick={handleBuy}>
+                    Buy
+                </button>
             </div>
         </div>
     );

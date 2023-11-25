@@ -3,12 +3,11 @@ import Main from "../components/Main";
 import Footer from "../components/Footer";
 
 
-const Home = ({ changeToWishList, addToCartList, wishlistItems: wishlist, handleSearch, products, handleChangeCategory, handleSort, handlePopular}) => {
-
+const Home = ({ changeToWishList, handleChangeCart, cartlist, wishlistItems: wishlist, handleSearch, products, handleChangeCategory, handleSort, handlePopular}) => {
     return (
         <div>
             <Header handleSearch={handleSearch}/>
-            <Main changeToWishList={changeToWishList} addToCartList={addToCartList} wishlist={wishlist} products={products} handleChangeCategory={handleChangeCategory} handleSort={handleSort} handlePopular={handlePopular}/>
+            <Main changeToWishList={changeToWishList} handleChangeCart={handleChangeCart} cartlist={cartlist} wishlist={wishlist} products={products} handleChangeCategory={handleChangeCategory} handleSort={handleSort} handlePopular={handlePopular}/>
             <Footer/>
         </div>
     );

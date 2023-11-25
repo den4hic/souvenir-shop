@@ -5,7 +5,7 @@ import ItemsFilter from "./ItemsFilter";
 import '../styles/Content.css';
 import {Pagination} from "semantic-ui-react";
 
-const Content = ({changeToWishList, addToCartList, wishlist, products, handleChangeCategory, handleSort, handlePopular}) => {
+const Content = ({changeToWishList, handleChangeCart, cartlist, wishlist, products, handleChangeCategory, handleSort, handlePopular}) => {
     const [activePage, setActivePage] = useState(1);
 
     const handlePaginationChange = (e, { activePage }) => setActivePage(activePage);
@@ -21,7 +21,7 @@ const Content = ({changeToWishList, addToCartList, wishlist, products, handleCha
             : <div className="content-container">
                     <h1>Асортимент</h1>
                     <ItemsFilter handleChangeCategory={handleChangeCategory} handleSort={handleSort} handlePopular={handlePopular}/>
-                    <Items changeToWishList={changeToWishList} addToCartList={addToCartList} products={products} wishlist={wishlist} activePage={activePage}/>
+                    <Items changeToWishList={changeToWishList} handleChangeCart={handleChangeCart} products={products} cartlist={cartlist} wishlist={wishlist} activePage={activePage}/>
                     <Pagination
                         boundaryRange={0}
                         defaultActivePage={1}
