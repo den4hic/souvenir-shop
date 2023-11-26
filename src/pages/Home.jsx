@@ -2,7 +2,6 @@ import Header from "../components/Header";
 import Main from "../components/Main";
 import Footer from "../components/Footer";
 
-
 const Home = ({ changeToWishList, handleChangeCart, cartlist, wishlistItems: wishlist, handleSearch, products, handleChangeCategory, handleSort, handlePopular}) => {
     return (
         <div>

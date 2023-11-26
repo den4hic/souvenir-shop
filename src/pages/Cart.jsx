@@ -1,35 +1,56 @@
-import React, { useState } from 'react';
-
+import React, { useEffect, useState } from 'react';
 import '../styles/Cart.css';
-import Header from "../components/Header";
-import CartProduct from "../components/CartProduct";
+import Header from '../components/Header';
+import CartProduct from '../components/CartProduct';
 
 const Cart = ({ cartlistItems: products, handleChangeCart }) => {
-    const [cartProducts, setCartProducts] = useState(products);
-    const [selectedProduct, setSelectedProduct] = useState(null);
-    const [quantity, setQuantity] = useState(1);
+    const [finalPrice, setFinalPrice] = useState(0);
 
+    useEffect(() => {
+        let totalPrice = 0;
+        products.forEach((product) => {
+            totalPrice += product.price;
+        });
+        setFinalPrice(totalPrice);
+    }, [products]);
 
     const handleBuy = () => {
         console.log('Куплено!');
     };
 
-    return (
+    const changePrice = (product, quantityNew, change) => {
+        const oldPrice = product.price * (quantityNew - change);
+        const newPrice = product.price * quantityNew;
+        const newFinalPrice = finalPrice + newPrice - oldPrice;
 
+        setFinalPrice(newFinalPrice);
+    };
+
+    return (
         <div>
-            <Header/>
+            <Header />
             <div className="cart-container">
-                <h2>Кошик</h2>
-                {cartProducts.length === 0 && (<h3>Кошик пустий</h3>)}
+                <h2 className="cart-text">Кошик</h2>
+                {products.length === 0 && <h3 className="cart-text">Кошик пустий</h3>}
                 <div className="products-container">
-                    {cartProducts.map((product, index) => (
-                        <CartProduct product={product} index={index} handleChangeCart={handleChangeCart}/>
+                    {products.map((product, index) => (
+                        <CartProduct
+                            key={index}
+                            product={product}
+                            index={index}
+                            handleChangeCart={handleChangeCart}
+                            changePrice={changePrice}
+                        />
                     ))}
                 </div>
 
-                <button className="buy-button" onClick={handleBuy}>
-                    Buy
-                </button>
+                {products.length !== 0 && <div className="cart-buy-container">
+                    <h2>Ціна замовлення: {finalPrice}</h2>
+
+                    <button className="buy-button" onClick={handleBuy}>
+                        Buy
+                    </button>
+                </div> }
             </div>
         </div>
     );

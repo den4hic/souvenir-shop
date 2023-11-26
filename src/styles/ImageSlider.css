@@ -1,0 +1,36 @@
+.image-slide-content {
+    width: 100%;
+    border-radius: 15px;
+    height: auto;
+}
+
+.image-slider-container {
+    max-width: 100%;
+    min-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-top: 10px;
+}
+@media (max-width: 850px) {
+    .image-slider-container {
+        min-width: 600px;
+    }
+}
+.image-slider-dot-container {
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+}
+
+.image-slider-dot {
+    cursor: pointer;
+}
+
+.arrow {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}

@@ -1,7 +1,12 @@
 .filter-container {
     display: flex;
     justify-content: center;
-    width: 1200px;
+    width: 800px;
+}
+@media (max-width: 880px) {
+    .filter-container {
+        width: 600px;
+    }
 }
 .filter-form {
     display: flex;

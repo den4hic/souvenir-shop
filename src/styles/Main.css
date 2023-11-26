@@ -5,7 +5,10 @@
 }
 
 .main {
-    width: 1400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1400px;
     min-height: 100vh;
     height: 100%;
     box-shadow: 5px 0 3px #9b9898, -5px 0 3px #9b9898;

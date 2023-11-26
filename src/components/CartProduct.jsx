@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
-const CartProduct = ({ product, index, handleChangeCart}) => {
+const CartProduct = ({ product, index, handleChangeCart, changePrice}) => {
     const [quantity, setQuantity] = useState(1);
 
     const handleQuantityChange = (change) => {
         const newQuantity = quantity + change;
+
+        changePrice(product, newQuantity, change);
 
         if (newQuantity === 0) {
             handleChangeCart(product, false);
@@ -21,7 +23,6 @@ const CartProduct = ({ product, index, handleChangeCart}) => {
     };
 
     return (
-        quantity !== 0 && (
             <div className="product" key={index}>
                 <img src={`/assets/images/products/${product.image}`} alt={product.name} className="product-image" />
                 <div className="product-details">
@@ -29,13 +30,12 @@ const CartProduct = ({ product, index, handleChangeCart}) => {
                     <p>Ціна: ${product.price}</p>
                     <div className="quantity-controls">
                         <button onClick={() => handleQuantityChange(-1)}>-</button>
-                        <span>{quantity}</span>
+                        <span>{quantity === 0 ? setQuantity(1) : quantity}</span>
                         <button onClick={() => handleQuantityChange(1)}>+</button>
                     </div>
                     <p>Загальна ціна: ${calculateTotalPrice()}</p>
                 </div>
             </div>
-        )
     );
 };
 

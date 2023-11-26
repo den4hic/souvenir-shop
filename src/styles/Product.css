@@ -9,6 +9,18 @@
     padding-top: 20px;
     margin-bottom: 20px;
 }
+
+@media (max-width: 1200px) {
+    .item-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 880px) {
+    .item-container {
+        column-gap: 60px;
+    }
+}
+
 .image {
     max-width: 300px;
     max-height: 300px;
