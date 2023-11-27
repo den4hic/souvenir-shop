@@ -15,9 +15,11 @@
 }
 @media (max-width: 850px) {
     .image-slider-container {
-        min-width: 600px;
+        width: 80%;
+        min-width: 80%;
     }
 }
+
 .image-slider-dot-container {
     display: flex;
     position: absolute;

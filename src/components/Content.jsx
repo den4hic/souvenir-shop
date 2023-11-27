@@ -11,7 +11,7 @@ const Content = ({changeToWishList, handleChangeCart, cartlist, wishlist, produc
     const handlePaginationChange = (e, { activePage }) => setActivePage(activePage);
 
     return (
-        <div>
+        <div style={{width:"100%"}}>
             {products.length === 0
             ? (
                 <div className="not-found-content-container">

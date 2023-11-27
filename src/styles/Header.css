@@ -76,3 +76,55 @@ li:last-child {
     display: flex;
     justify-content: center;
 }
+@media (max-width: 660px) {
+    .navigation-link {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navigation-link {
+        font-size: 12px;
+        padding-right: 20px;
+    }
+    nav ul li {
+        margin-right: 20px;
+    }
+    .title {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .navigation-link {
+        font-size: 10px;
+        padding-right: 15px;
+    }
+    nav ul li {
+        margin-right: 15px;
+    }
+}
+
+@media (max-width: 400px) {
+    .navigation-link {
+        padding-right: 10px;
+    }
+    nav ul li {
+        margin-right: 10px;
+    }
+    .title {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 360px) {
+    .header-bottom {
+        padding: 10px 5px;
+    }
+    .header-top {
+        padding: 10px 5px;
+    }
+    .cart {
+        margin-right: 10px;
+    }
+}

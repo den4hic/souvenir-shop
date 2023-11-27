@@ -8,7 +8,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
     max-width: 1400px;
+    width: 100%;
     min-height: 100vh;
     height: 100%;
     box-shadow: 5px 0 3px #9b9898, -5px 0 3px #9b9898;

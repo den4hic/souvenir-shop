@@ -8,6 +8,16 @@
         width: 600px;
     }
 }
+
+@media (max-width: 660px) {
+    .filter-form {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .filter-container {
+        width: 100%;
+    }
+}
 .filter-form {
     display: flex;
     align-items: center;

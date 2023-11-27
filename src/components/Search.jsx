@@ -4,8 +4,15 @@ import {Icon, Input} from 'semantic-ui-react'
 import '../styles/Search.css';
 
 const Search = ({handleSearch}) => {
-    const [searchQuery, setSearchQuery] = useState('');
-    const [isSearchField, setIsSearchField] = useState(false)
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener('resize', handleResize);
+    }, []);
 
     useEffect(() => {
         if(handleSearch) {
@@ -27,6 +34,7 @@ const Search = ({handleSearch}) => {
             <div className="search-input">
                 <div className="search-field">
                     <Input
+                        size={windowWidth < 764 ? "mini" : "large"}
                         onChange={performSearch}
                         icon={<Icon onClick={()=>{
                             console.log(1)}} name='search' inverted circular link />}

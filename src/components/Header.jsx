@@ -1,15 +1,27 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import '../styles/Header.css';
 import { Link } from 'react-router-dom';
 import LoginForm from "./LoginForm";
 import Breadcrumbs from "./Breadcrumbs";
 import Search from "./Search";
-import {Dropdown, Icon, Menu} from "semantic-ui-react";
+import {Icon} from "semantic-ui-react";
 
 
 const Header = ({handleSearch}) => {
     const [isShow, setIsShow] = useState(false);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
     const loginClose = () => {
         setIsShow(false);
     }
@@ -31,10 +43,10 @@ const Header = ({handleSearch}) => {
                 <div className="header-bottom">
                     <div className="left-header-bottom">
                         <div className="cart">
-                            <Link className="link-cart" to='/cart'><Icon className="shopping-basket" name="shopping basket" size="big"/></Link>
+                            <Link className="link-cart" to='/cart'><Icon className="shopping-basket" name="shopping basket" size={windowWidth < 500 ? "large" : "big"}/></Link>
                         </div>
                         <div className="wish">
-                            <Link className="link-wish" to="/wish"><Icon className="wish-icon" name="like" size="big"/></Link>
+                            <Link className="link-wish" to="/wish"><Icon className="wish-icon" name="like" size={windowWidth < 500 ? "large" : "big"}/></Link>
                         </div>
                     </div>
                     <div className="title-container">

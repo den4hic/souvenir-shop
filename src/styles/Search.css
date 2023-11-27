@@ -1,12 +1,8 @@
 .search-icon {
-
     border-radius: 30px;
     background-color: #505964;
     padding: 8px 8px 8px 10px;
     cursor: pointer;
-}
-.search-icon *{
-
 }
 .search-field {
     display: flex;
@@ -15,4 +11,8 @@
 .search-container {
     display: flex;
     justify-content: flex-end;
+}
+
+@media (max-width: 660px) {
+    
 }

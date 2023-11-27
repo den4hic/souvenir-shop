@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
+    width: 100%;
     color: var(--main-bg-color);
 }
 
