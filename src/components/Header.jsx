@@ -78,7 +78,13 @@ const Header = ({handleSearch}) => {
                     </nav>
                     <p>{loggedIn}</p>
                     {loggedIn ?
-                        <button onClick={() => exitFunction()} className="exit-btn">Вийти</button>
+                        (
+                            <div className="user-container">
+                                <Icon name="user" size="big" color="black"/>
+                                <div className="user-text">Admin</div>
+                                <button onClick={() => exitFunction()} className="exit-btn">Вийти</button>
+                            </div>
+                        )
                         :
                         <button onClick={() => setIsShow(true)} className="login-btn">Увійти</button>
                         }

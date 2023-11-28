@@ -88,17 +88,17 @@ nav ul li {
     color: #ed5584;
 }
 .exit-btn {
-    background-color: #ed5584;
+    background-color: grey;
     color: #fff;
     padding: 8px 16px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     text-decoration: none;
     cursor: pointer;
 }
 .exit-btn:hover {
     background-color: #fff;
-    color: #ed5584;
+    color: grey;
 }
 .cart {
     margin-right: 20px;
@@ -126,6 +126,16 @@ nav ul li {
     display: flex;
     justify-content: center;
 }
+
+.user-container {
+    display: flex;
+    align-items: center;
+}
+.user-text {
+    color: white;
+    margin-right: 10px;
+}
+
 @media (max-width: 660px) {
     .navigation-link {
         font-size: 15px;
@@ -148,6 +158,13 @@ nav ul li {
     }
     .title {
         font-size: 20px;
+    }
+    .user-text {
+        margin-right: 5px;
+        font-size: 10px;
+    }
+    .user-container {
+        flex-direction: column;
     }
 }
 
