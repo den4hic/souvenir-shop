@@ -2,19 +2,24 @@ import React, {useCallback, useState} from 'react';
 
 import '../styles/LoginForm.css';
 
-const LoginForm = ({ show, onClose }) => {
+const LoginForm = ({ show, onClose, onLogin }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [isError, setIsError] = useState(false);
 
+    const handleLogin = useCallback((e) => {
+        e.preventDefault();
+        if (username === "admin" && password === "admin") {
+            onLogin();
+            onClose();
+        } else {
+            setIsError(true);
+        }
+    }, [username, password, onLogin, onClose]);
+
     if (!show) {
         return null;
     }
-
-    const handleLogin = (e) => {
-        e.preventDefault();
-        setIsError(true);
-    };
 
     return (
         <div className="login-background" onClick={onClose}>

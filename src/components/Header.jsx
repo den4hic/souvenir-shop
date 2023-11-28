@@ -5,11 +5,20 @@ import LoginForm from "./LoginForm";
 import Breadcrumbs from "./Breadcrumbs";
 import Search from "./Search";
 import {Icon} from "semantic-ui-react";
+import Cookies from "js-cookie";
 
 const Header = ({handleSearch}) => {
     const [isShow, setIsShow] = useState(false);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [showSubMenu, setShowSubMenu] = useState(false);
+    const [loggedIn, setLoggedIn] = useState(false);
+
+    useEffect(() => {
+        const isAuthenticated = Cookies.get('isAuthenticated') === 'true';
+        if (isAuthenticated) {
+            setLoggedIn(true);
+        }
+    }, []);
 
     useEffect(() => {
         const handleResize = () => {
@@ -18,6 +27,16 @@ const Header = ({handleSearch}) => {
 
         window.addEventListener('resize', handleResize);
     }, []);
+
+    const handleLogin = async () => {
+        setLoggedIn(true);
+        Cookies.set('isAuthenticated', true);
+    };
+
+    const exitFunction = async () => {
+        setLoggedIn(false);
+        Cookies.remove('isAuthenticated');
+    };
 
     const handleSubMenu = () => {
         setShowSubMenu(!showSubMenu);
@@ -57,7 +76,12 @@ const Header = ({handleSearch}) => {
                             <li><Link className="navigation-link" to="/help">Допомога</Link></li>
                         </ul>
                     </nav>
-                    <button onClick={() => setIsShow(true)} className="login-btn">Увійти</button>
+                    <p>{loggedIn}</p>
+                    {loggedIn ?
+                        <button onClick={() => exitFunction()} className="exit-btn">Вийти</button>
+                        :
+                        <button onClick={() => setIsShow(true)} className="login-btn">Увійти</button>
+                        }
                 </div>
                 <div className="header-bottom">
                     <div className="left-header-bottom">
@@ -75,7 +99,7 @@ const Header = ({handleSearch}) => {
                 </div>
                 <Breadcrumbs/>
             </header>
-            <LoginForm show={isShow} onClose={loginClose}/>
+            <LoginForm show={isShow} onClose={loginClose} onLogin={handleLogin}/>
         </div>
     );
 };

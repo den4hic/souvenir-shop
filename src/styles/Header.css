@@ -87,6 +87,19 @@ nav ul li {
     background-color: #fff;
     color: #ed5584;
 }
+.exit-btn {
+    background-color: #ed5584;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.exit-btn:hover {
+    background-color: #fff;
+    color: #ed5584;
+}
 .cart {
     margin-right: 20px;
     text-decoration: none;
