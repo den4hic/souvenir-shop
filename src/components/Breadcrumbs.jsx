@@ -47,7 +47,7 @@ const Breadcrumbs = () => {
         })
 
     return (
-        <div>
+        <div className="breadcrumbs-container">
             {crumbs.length > 0 ? (
                     <div className="breadcrumbs">
                         <div className="crumb">

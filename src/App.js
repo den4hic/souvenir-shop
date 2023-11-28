@@ -135,11 +135,11 @@ function App() {
               />
               <Route
                   path="/contacts/map"
-                  element={<Contacts color1='facebook' color2='teal' handleSearch={handleSearch}/>}
+                  element={<Contacts isLocation={true} color1='facebook' color2='teal' handleSearch={handleSearch}/>}
               />
               <Route
                   path="/contacts/social"
-                  element={<Contacts color1='teal' color2='facebook' handleSearch={handleSearch}/>}
+                  element={<Contacts isLocation={false} color1='teal' color2='facebook' handleSearch={handleSearch}/>}
               />
               <Route
                   path="/cart"

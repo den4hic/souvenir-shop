@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     font-size: 20px;
-    width: 1400px;
+    max-width: 1400px;
 }
 
 .help-container {
@@ -10,10 +10,15 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
 .helper {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.help-text {
+    color: var(--main-bg-color);
 }

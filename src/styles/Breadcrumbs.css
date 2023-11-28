@@ -1,3 +1,7 @@
+.breadcrumbs-container {
+    margin-top: 130px;
+    margin-left: 10px;
+}
 .breadcrumbs {
     max-width: 1200px;
     margin: 20px auto;
@@ -21,4 +25,3 @@
     color: var(--main-bg-color);
     text-decoration: none;
 }
-

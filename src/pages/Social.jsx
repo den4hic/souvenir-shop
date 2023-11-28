@@ -1,11 +1,10 @@
 import React from 'react';
 
-import '../styles/Social.css'
 import {Button, Icon} from "semantic-ui-react";
 
 const Social = () => {
     return (
-        <div className="social-container">
+        <div className="new-content-container">
             <h1>Стеж за нами:</h1>
             <Button color='facebook'>
                 <Icon name='facebook' /> Facebook

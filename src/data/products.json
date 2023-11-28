@@ -125,6 +125,51 @@
       "category": ["decoration", "dishes"],
       "image": "14_product.jpg",
       "isPopular": true
+    },
+    {
+      "id": 15,
+      "name": "Глечик з орнаментом",
+      "price": 450,
+      "description": "Глечик з гарним народним орнаментм",
+      "category": ["decoration", "dishes"],
+      "image": "15_product.jpg",
+      "isPopular": false
+    },
+    {
+      "id": 16,
+      "name": "Тарілка 'Природа'",
+      "price": 150,
+      "description": "Тарілка, на якій намальовані різні квітки",
+      "category": ["decoration", "dishes"],
+      "image": "16_product.jpg",
+      "isPopular": false
+    },
+    {
+      "id": 17,
+      "name": "Столові прибори",
+      "price": 120,
+      "description": "Гарне рішення для застілля з родиною",
+      "category": ["dishes"],
+      "image": "17_product.jpg",
+      "isPopular": true
+    },
+    {
+      "id": 18,
+      "name": "Подарункові рослини",
+      "price": 400,
+      "description": "Вибір на подарунок для людини, яка полюбляє рослини",
+      "category": ["decoration", "plant"],
+      "image": "18_product.jpg",
+      "isPopular": true
+    },
+    {
+      "id": 19,
+      "name": "Тарілка з візерунком",
+      "price": 290,
+      "description": "Тарілка з надсписом 'Bulgaria'",
+      "category": ["decoration", "dishes"],
+      "image": "19_product.jpg",
+      "isPopular": true
     }
   ]
 

@@ -1,7 +1,6 @@
 .main-container {
     display: flex;
     justify-content: center;
-    /*max-width: 1200px;*/
 }
 
 .main {
@@ -15,4 +14,15 @@
     min-height: 100vh;
     height: 100%;
     box-shadow: 5px 0 3px #9b9898, -5px 0 3px #9b9898;
+}
+@media (max-width: 480px) {
+    .main {
+        box-shadow: none;
+    }
+}
+
+@media (max-width: 376px) {
+    .main-container{
+        margin-left: 70px;
+    }
 }

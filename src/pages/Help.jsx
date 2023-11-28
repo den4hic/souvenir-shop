@@ -111,7 +111,7 @@ const Help = ({handleSearch}) => {
         <div>
             <Header/>
             <div className="help-container">
-                <h1>Часті запитання</h1>
+                <h1 className="help-text">Часті запитання</h1>
                 <div className="help-content">
                     <Accordion fluid styled defaultActiveIndex={0} panels={panels} />
                 </div>

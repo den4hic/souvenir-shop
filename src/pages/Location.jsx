@@ -2,8 +2,6 @@ import React, { useEffect } from 'react';
 import L from 'leaflet';
 import {List} from "semantic-ui-react";
 
-import '../styles/Location.css';
-
 const Location = () => {
     useEffect(() => {
         const mapContainer = document.getElementById('map');
@@ -23,7 +21,7 @@ const Location = () => {
     }, []);
 
     return (
-        <div className="location-container">
+        <div className="new-content-container">
             <h1>Зв'язатися з нами:</h1>
             <List size='big'>
                 <List.Item icon='building' content='Souvenir' />
@@ -31,7 +29,7 @@ const Location = () => {
                 <List.Item icon='mail' content='d.davydov@ukma.edu.ua'/>
                 <List.Item icon='road' content='Вул Олександри Екстер 14Б'/>
             </List>
-            <div style={{height:'500px', width:'700px'}} id='map'></div>
+            <div style={{height:'500px', width:'100%'}} id='map'></div>
         </div>
 
     );
